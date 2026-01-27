@@ -97,7 +97,7 @@ export default function Navbar() {
 
                 {/* 掘金 */}
                 <a
-                  href="https://juejin.cn/user/3350967174838701"
+                  href="https://juejin.cn/user/4429277496092392"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan transition-colors duration-200"
