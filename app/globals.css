@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 深色模式（默认） */
+:root.dark {
+  /* 背景色 */
+  --bg-primary: #0A0E27;
+  --bg-secondary: #141B3A;
+  --bg-card: #1A2238;
+  --bg-hover: #1F2937;
+  
+  /* 文字色 */
+  --text-primary: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  
+  /* 边框色 */
+  --border-primary: #2A3454;
+  --border-secondary: #334155;
+  --border-hover: #22D3EE;
+  
+  /* 强调色 */
+  --accent-cyan: #22D3EE;
+  --accent-blue: #3B82F6;
+  --accent-purple: #A855F7;
+  --accent-green: #10B981;
+  
+  /* 导航栏 */
+  --nav-bg: rgba(10, 14, 39, 0.8);
+  --nav-border: #2A3454;
+  
+  /* 代码窗口 */
+  --code-bg: #1E293B;
+  --code-header-bg: #0F172A;
+  --code-border: #334155;
+  
+  /* 阴影 */
+  --shadow-color: rgba(34, 211, 238, 0.1);
+}
+
+/* 浅色模式 */
+:root.light {
+  /* 背景色 */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-hover: #F1F5F9;
+  
+  /* 文字色 */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  
+  /* 边框色 */
+  --border-primary: #E2E8F0;
+  --border-secondary: #CBD5E1;
+  --border-hover: #0891B2;
+  
+  /* 强调色 */
+  --accent-cyan: #0891B2;
+  --accent-blue: #2563EB;
+  --accent-purple: #9333EA;
+  --accent-green: #059669;
+  
+  /* 导航栏 */
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-border: #E2E8F0;
+  
+  /* 代码窗口 */
+  --code-bg: #F1F5F9;
+  --code-header-bg: #E2E8F0;
+  --code-border: #CBD5E1;
+  
+  /* 阴影 */
+  --shadow-color: rgba(8, 145, 178, 0.1);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+/* 星空背景在浅色模式下调整 */
+.light .star-field {
+  opacity: 0.15;
+}
+
+.light .star-field canvas {
+  filter: invert(1);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* 背景色工具类 */
+  .bg-primary {
+    background-color: var(--bg-primary);
+  }
+  
+  .bg-secondary {
+    background-color: var(--bg-secondary);
+  }
+  
+  .bg-card {
+    background-color: var(--bg-card);
+  }
+  
+  .bg-hover {
+    background-color: var(--bg-hover);
+  }
+  
+  /* 文字色工具类 */
+  .text-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .text-muted {
+    color: var(--text-muted);
+  }
+  
+  /* 边框色工具类 */
+  .border-primary {
+    border-color: var(--border-primary);
+  }
+  
+  .border-secondary {
+    border-color: var(--border-secondary);
+  }
+  
+  /* 强调色工具类 */
+  .text-accent-cyan {
+    color: var(--accent-cyan);
+  }
+  
+  .text-accent-blue {
+    color: var(--accent-blue);
+  }
+  
+  .bg-accent-cyan {
+    background-color: var(--accent-cyan);
+  }
+  
+  .border-accent-cyan {
+    border-color: var(--accent-cyan);
+  }
+}
+
+/* 代码窗口样式 */
+.code-window {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+}
+
+.code-header {
+  background: var(--code-header-bg);
+  border-bottom: 1px solid var(--code-border);
+}
+
+/* 卡片悬停效果 */
+.card-hover {
+  transition: all 0.2s ease-out;
+}
+
+.card-hover:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+/* 技能标签悬停效果 */
+.skill-badge {
+  transition: all 0.2s ease-out;
+}
+
+.skill-badge:hover {
+  background-color: var(--accent-cyan);
+  color: var(--bg-primary);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
