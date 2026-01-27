@@ -17,45 +17,46 @@ export default function Navbar() {
   return (
     <nav className="fixed top-4 left-4 right-4 z-50">
       <div
-        className={`max-w-7xl mx-auto bg-[#0A0E27]/80 backdrop-blur-lg rounded-2xl border transition-all duration-300 ${
-          scrolled ? 'border-[#2A3454] shadow-lg shadow-cyan-400/10' : 'border-[#2A3454]/50'
+        style={{ background: 'var(--nav-bg)' }}
+        className={`max-w-7xl mx-auto backdrop-blur-lg rounded-2xl border border-primary transition-all duration-300 ${
+          scrolled ? 'shadow-lg' : ''
         }`}
       >
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-xl font-bold font-mono">
-              <span className="text-white">DEVELOPER</span>
-              <span className="text-cyan-400">.DEV</span>
+              <span className="text-primary">DEVELOPER</span>
+              <span className="text-accent-cyan">.DEV</span>
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
               <a
                 href="#home"
-                className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
               >
                 首页
               </a>
               <a
                 href="#about"
-                className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
               >
                 关于
               </a>
               <a
                 href="#skills"
-                className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
               >
                 技术栈
               </a>
               <a
                 href="#projects"
-                className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
               >
                 项目
               </a>
               <a
                 href="#services"
-                className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
               >
                 服务
               </a>
@@ -69,7 +70,7 @@ export default function Navbar() {
                   href="https://github.com/roydonGuo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors duration-200"
+                  className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan transition-colors duration-200"
                   aria-label="GitHub"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -83,10 +84,10 @@ export default function Navbar() {
 
                 {/* CSDN */}
                 <a
-                  href="https://blog.csdn.net/weixin_43934607"
+                  href="https://blog.csdn.net/m0_51390535"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors duration-200"
+                  className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan transition-colors duration-200"
                   aria-label="CSDN"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -99,7 +100,7 @@ export default function Navbar() {
                   href="https://juejin.cn/user/3350967174838701"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors duration-200"
+                  className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan transition-colors duration-200"
                   aria-label="掘金"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 36 28">
@@ -108,19 +109,19 @@ export default function Navbar() {
                 </a>
 
                 {/* 分隔线 */}
-                <div className="w-px h-6 bg-slate-700"></div>
+                <div className="w-px h-6 border-secondary" style={{ borderWidth: '1px' }}></div>
 
                 {/* 主题切换 */}
                 <ThemeToggle />
 
                 {/* 分隔线 */}
-                <div className="w-px h-6 bg-slate-700"></div>
+                <div className="w-px h-6 border-secondary" style={{ borderWidth: '1px' }}></div>
               </div>
 
               {/* 联系我按钮 */}
               <a
                 href="#contact"
-                className="px-6 py-2 bg-white text-slate-900 rounded-lg font-medium hover:bg-cyan-400 transition-colors duration-200"
+                className="px-6 py-2 rounded-lg font-medium transition-colors duration-200 dark:bg-white dark:text-slate-900 dark:hover:bg-cyan-400 light:bg-slate-900 light:text-white light:hover:bg-cyan-600"
               >
                 联系我
               </a>

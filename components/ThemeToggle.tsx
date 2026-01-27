@@ -11,21 +11,20 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = (localStorage.getItem('theme') as Theme) || 'system';
+    const savedTheme = (localStorage.getItem('theme') as Theme) || 'dark';
     setTheme(savedTheme);
     applyTheme(savedTheme);
   }, []);
 
   const applyTheme = (newTheme: Theme) => {
     const root = document.documentElement;
+    root.classList.remove('dark', 'light');
     
     if (newTheme === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.classList.toggle('dark', systemTheme === 'dark');
-      root.classList.toggle('light', systemTheme === 'light');
+      root.classList.add(systemTheme);
     } else {
-      root.classList.toggle('dark', newTheme === 'dark');
-      root.classList.toggle('light', newTheme === 'light');
+      root.classList.add(newTheme);
     }
   };
 
@@ -39,7 +38,7 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <div className="w-9 h-9 flex items-center justify-center">
-        <div className="w-5 h-5 border-2 border-slate-400 border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-5 h-5 border-2 border-muted border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -48,7 +47,7 @@ export default function ThemeToggle() {
     <div className="relative">
       <button
         onClick={() => setShowMenu(!showMenu)}
-        className="w-9 h-9 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors duration-200"
+        className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan transition-colors duration-200"
         aria-label="切换主题"
       >
         {theme === 'light' && (
@@ -89,12 +88,24 @@ export default function ThemeToggle() {
             className="fixed inset-0 z-40"
             onClick={() => setShowMenu(false)}
           ></div>
-          <div className="absolute right-0 mt-2 w-40 bg-[#1A2238] border border-[#2A3454] rounded-lg shadow-lg overflow-hidden z-50">
+          <div 
+            className="absolute right-0 mt-2 w-40 bg-card border border-primary rounded-lg shadow-lg overflow-hidden z-50"
+            style={{ 
+              backgroundColor: 'var(--bg-card)',
+              borderColor: 'var(--border-primary)'
+            }}
+          >
             <button
               onClick={() => handleThemeChange('light')}
-              className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-cyan-400/10 transition-colors duration-200 ${
-                theme === 'light' ? 'text-cyan-400 bg-cyan-400/10' : 'text-slate-300'
+              className={`w-full px-4 py-3 flex items-center gap-3 transition-colors duration-200 ${
+                theme === 'light' 
+                  ? 'text-accent-cyan' 
+                  : 'text-secondary hover:bg-hover'
               }`}
+              style={theme === 'light' ? { 
+                backgroundColor: 'rgba(34, 211, 238, 0.1)',
+                color: 'var(--accent-cyan)'
+              } : {}}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -108,9 +119,15 @@ export default function ThemeToggle() {
             </button>
             <button
               onClick={() => handleThemeChange('dark')}
-              className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-cyan-400/10 transition-colors duration-200 ${
-                theme === 'dark' ? 'text-cyan-400 bg-cyan-400/10' : 'text-slate-300'
+              className={`w-full px-4 py-3 flex items-center gap-3 transition-colors duration-200 ${
+                theme === 'dark' 
+                  ? 'text-accent-cyan' 
+                  : 'text-secondary hover:bg-hover'
               }`}
+              style={theme === 'dark' ? { 
+                backgroundColor: 'rgba(34, 211, 238, 0.1)',
+                color: 'var(--accent-cyan)'
+              } : {}}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -124,9 +141,15 @@ export default function ThemeToggle() {
             </button>
             <button
               onClick={() => handleThemeChange('system')}
-              className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-cyan-400/10 transition-colors duration-200 ${
-                theme === 'system' ? 'text-cyan-400 bg-cyan-400/10' : 'text-slate-300'
+              className={`w-full px-4 py-3 flex items-center gap-3 transition-colors duration-200 ${
+                theme === 'system' 
+                  ? 'text-accent-cyan' 
+                  : 'text-secondary hover:bg-hover'
               }`}
+              style={theme === 'system' ? { 
+                backgroundColor: 'rgba(34, 211, 238, 0.1)',
+                color: 'var(--accent-cyan)'
+              } : {}}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
