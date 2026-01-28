@@ -52,7 +52,7 @@ export default function Services() {
       ),
       title: 'Nav',
       subtitle: 'nav.codinggo.cn',
-      description: '导航导航',
+      description: '导航网站',
       url: 'https://nav.codinggo.cn',
     },
     {
@@ -91,12 +91,19 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="relative py-20 px-6 z-10 bg-[#0F172A]/30">
+    <section 
+      id="services" 
+      className="relative py-20 px-6 z-10"
+      style={{ backgroundColor: 'var(--bg-secondary)' }}
+    >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          <span className="text-cyan-400"># </span>
-          <span className="text-white">在线服务</span>
+        <h2 className="text-4xl font-bold text-center mb-4">
+          <span style={{ color: 'var(--accent-cyan)' }}># </span>
+          <span style={{ color: 'var(--text-primary)' }}>在线服务</span>
         </h2>
+        <p className="text-center mb-16" style={{ color: 'var(--text-muted)' }}>
+          个人开发的在线服务平台
+        </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
@@ -105,18 +112,44 @@ export default function Services() {
               href={service.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#1A2238] border border-[#2A3454] rounded-xl p-6 hover:border-cyan-400 transition-all duration-200 hover:-translate-y-1 cursor-pointer group"
+              className="rounded-xl p-6 card-hover cursor-pointer group"
+              style={{ 
+                backgroundColor: 'var(--bg-card)',
+                border: '1px solid var(--border-primary)'
+              }}
             >
-              <div className="w-16 h-16 bg-cyan-400/10 border border-cyan-400/30 rounded-xl flex items-center justify-center text-cyan-400 mb-4 group-hover:bg-cyan-400/20 transition-colors">
+              <div 
+                className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 transition-colors"
+                style={{ 
+                  backgroundColor: 'rgba(34, 211, 238, 0.1)',
+                  border: '1px solid rgba(34, 211, 238, 0.3)',
+                  color: 'var(--accent-cyan)'
+                }}
+              >
                 {service.icon}
               </div>
               
-              <h3 className="text-xl font-bold text-white mb-1">{service.title}</h3>
-              <div className="text-sm text-slate-400 mb-2 font-mono">{service.subtitle}</div>
-              <p className="text-slate-400 text-sm">{service.description}</p>
+              <h3 className="text-xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
+                {service.title}
+              </h3>
+              <div className="text-sm mb-2 font-mono" style={{ color: 'var(--text-muted)' }}>
+                {service.subtitle}
+              </div>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                {service.description}
+              </p>
               
-              <div className="mt-4 pt-4 border-t border-[#2A3454] flex items-center justify-end">
-                <svg className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div 
+                className="mt-4 pt-4 flex items-center justify-end"
+                style={{ borderTop: '1px solid var(--border-primary)' }}
+              >
+                <svg 
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
+                  style={{ color: 'var(--accent-cyan)' }}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </div>

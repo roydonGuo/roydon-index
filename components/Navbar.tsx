@@ -5,61 +5,76 @@ import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+      
+      // Calculate scroll progress
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.scrollY / windowHeight) * 100;
+      setScrollProgress(scrolled);
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <nav className="fixed top-4 left-4 right-4 z-50">
       <div
         style={{ background: 'var(--nav-bg)' }}
-        className={`max-w-7xl mx-auto backdrop-blur-lg rounded-2xl border border-primary transition-all duration-300 ${
+        className={`max-w-7xl mx-auto backdrop-blur-lg rounded-full border border-primary transition-all duration-300 ${
           scrolled ? 'shadow-lg' : ''
         }`}
       >
+        {/* Scroll Progress Bar */}
+        <div 
+          className="absolute bottom-0 left-0 h-0.5 rounded-b-2xl transition-all duration-150"
+          style={{ 
+            width: `${scrollProgress}%`,
+            backgroundColor: 'var(--accent-cyan)'
+          }}
+        />
+        
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl font-bold font-mono">
+            <a 
+              href="#home"
+              onClick={(e) => handleNavClick(e, '#home')}
+              className="text-xl font-bold font-mono hover:scale-105 transition-transform duration-200"
+            >
               <span className="text-primary">DEVELOPER</span>
               <span className="text-accent-cyan">.DEV</span>
-            </div>
+            </a>
 
             <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="#home"
-                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
-              >
-                首页
-              </a>
-              <a
-                href="#about"
-                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
-              >
-                关于
-              </a>
-              <a
-                href="#skills"
-                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
-              >
-                技术栈
-              </a>
-              <a
-                href="#projects"
-                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
-              >
-                项目
-              </a>
-              <a
-                href="#services"
-                className="text-secondary hover:text-accent-cyan transition-colors duration-200"
-              >
-                服务
-              </a>
+              {[
+                { href: '#home', label: '首页' },
+                { href: '#about', label: '关于' },
+                { href: '#skills', label: '技术栈' },
+                { href: '#projects', label: '项目' },
+                { href: '#services', label: '服务' },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="text-secondary hover:text-accent-cyan transition-all duration-200 relative group"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-200 group-hover:w-full" style={{ backgroundColor: 'var(--accent-cyan)' }}></span>
+                </a>
+              ))}
             </div>
 
             <div className="flex items-center gap-4">
@@ -70,7 +85,7 @@ export default function Navbar() {
                   href="https://github.com/roydonGuo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan transition-colors duration-200"
+                  className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan hover:scale-110 transition-all duration-200"
                   aria-label="GitHub"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -84,10 +99,10 @@ export default function Navbar() {
 
                 {/* CSDN */}
                 <a
-                  href="https://blog.csdn.net/m0_51390535"
+                  href="https://blog.csdn.net/weixin_43934607"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan transition-colors duration-200"
+                  className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan hover:scale-110 transition-all duration-200"
                   aria-label="CSDN"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -97,10 +112,10 @@ export default function Navbar() {
 
                 {/* 掘金 */}
                 <a
-                  href="https://juejin.cn/user/4429277496092392"
+                  href="https://juejin.cn/user/3350967174838701"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan transition-colors duration-200"
+                  className="w-9 h-9 flex items-center justify-center text-muted hover:text-accent-cyan hover:scale-110 transition-all duration-200"
                   aria-label="掘金"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 36 28">
@@ -121,7 +136,12 @@ export default function Navbar() {
               {/* 联系我按钮 */}
               <a
                 href="#contact"
-                className="px-6 py-2 rounded-lg font-medium transition-colors duration-200 dark:bg-white dark:text-slate-900 dark:hover:bg-cyan-400 light:bg-slate-900 light:text-white light:hover:bg-cyan-600"
+                onClick={(e) => handleNavClick(e, '#contact')}
+                className="px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105"
+                style={{
+                  backgroundColor: 'var(--accent-cyan)',
+                  color: 'var(--bg-primary)'
+                }}
               >
                 联系我
               </a>
