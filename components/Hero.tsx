@@ -18,7 +18,7 @@ export default function Hero() {
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             <div className="mb-2 animate-fade-in-up" style={{ color: 'var(--text-primary)' }}>👋HEY,I AM</div>
-            <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-gradient animate-fade-in-up animation-delay-100">
+            <div className="text-transparent bg-clip-text pb-4 bg-gradient-to-r from-cyan-400 to-blue-500 animate-gradient animate-fade-in-up animation-delay-100">
               Roydon
             </div>
           </h1>
