@@ -17,27 +17,30 @@ export default function Hero() {
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <div className="mb-2 animate-fade-in-up" style={{ color: 'var(--text-primary)' }}>I AM</div>
+            <div className="mb-2 animate-fade-in-up" style={{ color: 'var(--text-primary)' }}>你好，我是</div>
             <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-gradient animate-fade-in-up animation-delay-100">
-              DEVELOPER
+              Roydon
             </div>
           </h1>
           
-          <div className="text-xl mb-6 font-mono animate-fade-in-up animation-delay-200" style={{ color: 'var(--accent-cyan)' }}>&gt; System Engineer</div>
+          <div className="text-xl mb-6 font-mono animate-fade-in-up animation-delay-200" style={{ color: 'var(--accent-cyan)' }}>&gt; 全栈开发工程师</div>
           
           <p className="text-lg mb-4 animate-fade-in-up animation-delay-300" style={{ color: 'var(--text-secondary)' }}>
-            专注于 <span style={{ color: 'var(--accent-cyan)' }}>新能源 & 半导体</span> 领域的高性能后端架构，
-            致力于 <span style={{ color: 'var(--accent-cyan)' }}>AI 智能应用</span> 落地实践。
+            专注于 <span style={{ color: 'var(--accent-cyan)' }}>Java 后端</span>、
+            <span style={{ color: 'var(--accent-cyan)' }}>前端开发</span> 和 
+            <span style={{ color: 'var(--accent-cyan)' }}>Android 移动端</span>，
+            致力于 <span style={{ color: 'var(--accent-cyan)' }}>分布式系统</span> 和 
+            <span style={{ color: 'var(--accent-cyan)' }}>AI 应用</span> 的落地实践。
           </p>
           
           <p className="mb-8 animate-fade-in-up animation-delay-400" style={{ color: 'var(--text-secondary)' }}>
-            以 Go/Java/Rust 为剑，打造极致稳定的分布式系统。
+            从 Spring Boot 到 Vue/React，从微服务架构到 AI PaaS 平台，用代码创造价值。
           </p>
           
           <div className="flex gap-4 animate-fade-in-up animation-delay-500">
             <a
               href="#projects"
-              className="px-6 py-3 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 hover:scale-105 hover:shadow-lg"
+              className="px-6 py-3 rounded-full font-semibold transition-all duration-200 inline-flex items-center gap-2 hover:scale-105 hover:shadow-lg"
               style={{ 
                 backgroundColor: 'var(--accent-cyan)',
                 color: 'var(--bg-primary)'
@@ -50,7 +53,7 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 border rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 hover:scale-105 hover:border-accent-cyan"
+              className="px-6 py-3 border rounded-full font-semibold transition-all duration-200 inline-flex items-center gap-2 hover:scale-105 hover:border-accent-cyan"
               style={{ 
                 borderColor: 'var(--border-secondary)',
                 color: 'var(--text-secondary)'
@@ -70,39 +73,61 @@ export default function Hero() {
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            <span className="text-sm ml-2 font-mono" style={{ color: 'var(--text-muted)' }}>developer/intro</span>
+            <span className="text-sm ml-2 font-mono" style={{ color: 'var(--text-muted)' }}>roydon/profile.java</span>
           </div>
           <div className="p-6 font-mono text-sm">
             <div className="mb-2">
-              <span className="text-purple-400">package</span>{' '}
-              <span style={{ color: 'var(--accent-cyan)' }}>main</span>
+              <span className="text-purple-400">public class</span>{' '}
+              <span className="text-yellow-400">Developer</span> {'{'}
             </div>
             <div className="mb-4"></div>
-            <div className="mb-2">
-              <span className="text-purple-400">import</span>{' '}
-              <span className="text-green-400">&quot;fmt&quot;</span>
+            <div className="ml-4 mb-2">
+              <span className="text-purple-400">private</span>{' '}
+              <span style={{ color: 'var(--accent-cyan)' }}>String</span>{' '}
+              name = <span className="text-green-400">&quot;Roydon&quot;</span>;
+            </div>
+            <div className="ml-4 mb-2">
+              <span className="text-purple-400">private</span>{' '}
+              <span style={{ color: 'var(--accent-cyan)' }}>String</span>{' '}
+              role = <span className="text-green-400">&quot;全栈工程师&quot;</span>;
             </div>
             <div className="mb-4"></div>
-            <div className="mb-2">
-              <span className="text-purple-400">func</span>{' '}
-              <span className="text-yellow-400">main</span>() {'{'}
-            </div>
-            <div className="ml-4 mb-2" style={{ color: 'var(--text-muted)' }}>// Start the Journey</div>
+            <div className="ml-4 mb-2" style={{ color: 'var(--text-muted)' }}>// 技术栈</div>
             <div className="ml-4 mb-2">
-              fmt.<span className="text-yellow-400">Println</span>(
-              <span className="text-green-400">&quot;Hello, World!&quot;</span>)
+              <span className="text-purple-400">private</span>{' '}
+              <span style={{ color: 'var(--accent-cyan)' }}>String[]</span>{' '}
+              skills = {'{'}
             </div>
+            <div className="ml-8 mb-2">
+              <span className="text-green-400">&quot;Java&quot;</span>,{' '}
+              <span className="text-green-400">&quot;Spring Boot&quot;</span>,
+            </div>
+            <div className="ml-8 mb-2">
+              <span className="text-green-400">&quot;Vue&quot;</span>,{' '}
+              <span className="text-green-400">&quot;React&quot;</span>,{' '}
+              <span className="text-green-400">&quot;Android&quot;</span>,
+            </div>
+            <div className="ml-8 mb-2">
+              <span className="text-green-400">&quot;分布式&quot;</span>,{' '}
+              <span className="text-green-400">&quot;AI 应用&quot;</span>
+            </div>
+            <div className="ml-4 mb-2">{'};'}</div>
             <div className="mb-4"></div>
-            <div className="ml-4 mb-2" style={{ color: 'var(--text-muted)' }}>// Mission</div>
+            <div className="ml-4 mb-2" style={{ color: 'var(--text-muted)' }}>// 使命</div>
             <div className="ml-4 mb-2">
-              fmt.<span className="text-yellow-400">Println</span>(
-              <span className="text-green-400">&quot;Designing Scalable Systems.&quot;</span>)
+              <span className="text-purple-400">public void</span>{' '}
+              <span className="text-yellow-400">mission</span>() {'{'}
             </div>
-            <div className="ml-4 mb-2">
-              fmt.<span className="text-yellow-400">Println</span>(
-              <span className="text-green-400">&quot;Exploring AI Boundaries.&quot;</span>)
+            <div className="ml-8 mb-2">
+              System.out.<span className="text-yellow-400">println</span>(
+              <span className="text-green-400">&quot;用代码创造价值&quot;</span>);
+            </div>
+            <div className="ml-8 mb-2">
+              System.out.<span className="text-yellow-400">println</span>(
+              <span className="text-green-400">&quot;持续学习与成长&quot;</span>);
               <span className="animate-pulse">|</span>
             </div>
+            <div className="ml-4 mb-2">{'}'}</div>
             <div className="mb-2">{'}'}</div>
           </div>
         </div>

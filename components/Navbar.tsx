@@ -38,13 +38,13 @@ export default function Navbar() {
         }`}
       >
         {/* Scroll Progress Bar */}
-        <div 
+        {/* <div 
           className="absolute bottom-0 left-0 h-0.5 rounded-b-2xl transition-all duration-150"
           style={{ 
             width: `${scrollProgress}%`,
             backgroundColor: 'var(--accent-cyan)'
           }}
-        />
+        /> */}
         
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
@@ -137,7 +137,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}
-                className="px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105"
+                className="px-6 py-2 rounded-full font-medium transition-all duration-200 hover:scale-105"
                 style={{
                   backgroundColor: 'var(--accent-cyan)',
                   color: 'var(--bg-primary)'

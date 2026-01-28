@@ -1,41 +1,42 @@
 export default function Contact() {
   return (
     <section id="contact" className="relative py-20 px-6 z-10">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-8">
           <span style={{ color: 'var(--accent-cyan)' }}># </span>
-          <span style={{ color: 'var(--text-primary)' }}>共建未来</span>
+          <span style={{ color: 'var(--text-primary)' }}>联系我</span>
         </h2>
         
-        <p className="text-center mb-12" style={{ color: 'var(--text-muted)' }}>
-          无论是有趣的 AI 想法，还在寻求的合作机会，请随时找交流。
+        <p className="text-center mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
+          欢迎交流技术、探讨项目合作，或者只是简单地打个招呼
         </p>
         
         <div 
-          className="bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl p-8 text-center mb-12"
+          className="rounded-2xl p-8 text-center mb-12"
           style={{
-            background: `linear-gradient(to right, var(--accent-cyan), var(--accent-blue))`
+            backgroundColor: 'var(--bg-card)',
+            border: '2px solid var(--accent-cyan)'
           }}
         >
-          <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--bg-primary)' }}>
-            准备好开始你的项目了吗？
+          <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+            寻求技术合作或项目咨询？
           </h3>
-          <p className="mb-6" style={{ color: 'var(--bg-primary)', opacity: 0.8 }}>
-            让我们一起将你的想法变为现实
+          <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
+            我专注于全栈开发、分布式系统和 AI 应用，期待与你一起创造价值
           </p>
           <a
             href="mailto:roydon_guo@163.com"
-            className="inline-block px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+            className="inline-block px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105"
             style={{
-              backgroundColor: 'var(--bg-primary)',
-              color: 'var(--text-primary)'
+              backgroundColor: 'var(--accent-cyan)',
+              color: 'var(--bg-primary)'
             }}
           >
-            立即联系
+            发送邮件
           </a>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <a
             href="mailto:roydon_guo@163.com"
             className="rounded-xl p-6 card-hover transition-all duration-200 text-center group cursor-pointer"
@@ -105,12 +106,67 @@ export default function Contact() {
               }}
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                <path d="M20.05 3.5c-.46-.45-1.12-.5-1.7-.5H5.65c-.58 0-1.24.05-1.7.5C3.5 3.95 3 4.6 3 5.35v13.3c0 .75.5 1.4.95 1.85.46.45 1.12.5 1.7.5h12.7c.58 0 1.24-.05 1.7-.5.45-.45.95-1.1.95-1.85V5.35c0-.75-.5-1.4-.95-1.85zM12 18.5c-3.58 0-6.5-2.92-6.5-6.5S8.42 5.5 12 5.5s6.5 2.92 6.5 6.5-2.92 6.5-6.5 6.5zm0-11c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"/>
               </svg>
             </div>
             <h3 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>CSDN</h3>
             <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>技术博客</p>
           </a>
+          
+          <a
+            href="https://juejin.cn/user/3350967174838701"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl p-6 card-hover transition-all duration-200 text-center group cursor-pointer"
+            style={{
+              backgroundColor: 'var(--bg-card)',
+              border: '1px solid var(--border-primary)'
+            }}
+          >
+            <div 
+              className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4 transition-colors"
+              style={{
+                backgroundColor: 'rgba(34, 211, 238, 0.1)',
+                border: '1px solid rgba(34, 211, 238, 0.3)',
+                color: 'var(--accent-cyan)'
+              }}
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 36 28">
+                <path d="M17.5875 6.77268L21.8232 3.40505L17.5875 0.00748237L17.5837 0L13.3555 3.39757L17.5837 6.76894L17.5875 6.77268ZM17.5863 17.3955H17.59L28.5161 8.77432L25.5526 6.39453L17.59 12.6808H17.5863L17.5825 12.6845L9.61993 6.40201L6.66016 8.78181L17.5825 17.3992L17.5863 17.3955ZM17.5828 23.2891L17.5865 23.2854L32.2133 11.7456L35.1768 14.1254L28.5238 19.3752L17.5865 28L0.284376 14.3574L0 14.1291L2.95977 11.7531L17.5828 23.2891Z"/>
+              </svg>
+            </div>
+            <h3 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>掘金</h3>
+            <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>技术社区</p>
+          </a>
+        </div>
+        
+        {/* 其他联系方式 */}
+        <div className="mt-12 text-center">
+          <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>
+            更多联系方式
+          </h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <div 
+              className="px-4 py-2 rounded-lg"
+              style={{
+                backgroundColor: 'var(--bg-card)',
+                border: '1px solid var(--border-primary)'
+              }}
+            >
+              <span className="text-sm" style={{ color: 'var(--text-muted)' }}>微信：</span>
+              <span className="text-sm font-semibold ml-2" style={{ color: 'var(--text-primary)' }}>roydon_guo</span>
+            </div>
+            <div 
+              className="px-4 py-2 rounded-lg"
+              style={{
+                backgroundColor: 'var(--bg-card)',
+                border: '1px solid var(--border-primary)'
+              }}
+            >
+              <span className="text-sm" style={{ color: 'var(--text-muted)' }}>QQ：</span>
+              <span className="text-sm font-semibold ml-2" style={{ color: 'var(--text-primary)' }}>可通过邮件获取</span>
+            </div>
+          </div>
         </div>
         
         <footer 
