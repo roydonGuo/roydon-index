@@ -13,11 +13,11 @@ export default function Hero() {
             }}
           >
             <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'var(--accent-cyan)' }}></div>
-            <span className="text-sm font-mono" style={{ color: 'var(--accent-cyan)' }}>SYSTEM ONLINE</span>
+            <span className="text-sm font-mono" style={{ color: 'var(--accent-cyan)' }}>SYSTEM ONLINE 👾</span>
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <div className="mb-2 animate-fade-in-up" style={{ color: 'var(--text-primary)' }}>你好，我是</div>
+            <div className="mb-2 animate-fade-in-up" style={{ color: 'var(--text-primary)' }}>👋HEY,I AM</div>
             <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-gradient animate-fade-in-up animation-delay-100">
               Roydon
             </div>
@@ -40,7 +40,7 @@ export default function Hero() {
           <div className="flex gap-4 animate-fade-in-up animation-delay-500">
             <a
               href="#projects"
-              className="px-6 py-3 rounded-full font-semibold transition-all duration-200 inline-flex items-center gap-2 hover:scale-105 hover:shadow-lg"
+              className="px-6 py-2 rounded-full font-semibold transition-all duration-200 inline-flex items-center gap-2 hover:scale-105 hover:shadow-lg"
               style={{ 
                 backgroundColor: 'var(--accent-cyan)',
                 color: 'var(--bg-primary)'
@@ -53,7 +53,7 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 border rounded-full font-semibold transition-all duration-200 inline-flex items-center gap-2 hover:scale-105 hover:border-accent-cyan"
+              className="px-6 py-2 border rounded-full font-semibold transition-all duration-200 inline-flex items-center gap-2 hover:scale-105 hover:border-accent-cyan"
               style={{ 
                 borderColor: 'var(--border-secondary)',
                 color: 'var(--text-secondary)'

@@ -53,8 +53,8 @@ export default function Navbar() {
               onClick={(e) => handleNavClick(e, '#home')}
               className="text-xl font-bold font-mono hover:scale-105 transition-transform duration-200"
             >
-              <span className="text-primary">DEVELOPER</span>
-              <span className="text-accent-cyan">.DEV</span>
+              <span className="text-primary">ROYDON</span>
+              <span className="text-accent-cyan">.FUN</span>
             </a>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -137,7 +137,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}
-                className="px-6 py-2 rounded-full font-medium transition-all duration-200 hover:scale-105"
+                className="px-4 py-1 rounded-full text-secondary font-medium transition-all duration-200 hover:scale-105"
                 style={{
                   backgroundColor: 'var(--accent-cyan)',
                   color: 'var(--bg-primary)'
